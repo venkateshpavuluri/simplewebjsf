@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+
+
+>
+<head>
+   <title>JSF Tutorial!</title>
+</head>
+<!-- <body>
+<form action="f">
+<input type="text" value="  #{helloworld.message}" />
+</form>
+
+   #{helloworld.message}
+</body> -->
+ <h:body>
+  <h:form>
+  <h2>Click here to go Another page</h2>
+         <h:commandLink action="#{helloworld.showPage}"
+            value="Page1">
+            <f:param name="pageId" value="1" />
+         </h:commandLink>
+         </h:form>
+ 
+ </h:body>
+</html>

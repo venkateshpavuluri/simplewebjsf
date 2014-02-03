@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+>
+<head>
+   <title>JSF Tutorial!</title>
+   <h:head>
+   <script type="text/javascript">
+      function showCheckedValue(){ 
+         alert(document.getElementById('jsfForm1:chkRememberMe').checked);	 
+      }
+   </script>
+   </h:head>
+</head>
+ <h:body>
+  <h:form id="jsfForm1">
+  <h2>Click here to go Another page2</h2>
+         <h:commandLink action="#{helloworld.showPage}"
+            value="Page2">
+             <f:param name="pageId" value="2" />
+         </h:commandLink>
+          <h2>Click here to go Another page3</h2>
+          <h:commandLink action="#{helloworld.showPage}"
+            value="Page3">
+             <f:param name="pageId" value="3" />
+         </h:commandLink>
+         <h:commandButton action="index?faces-redirect=true"
+            value="Back To Home Page" />
+            <h:inputText   value="Hello World!" ></h:inputText>
+            <table>
+            <tr><td>Check</td>
+           <td> <h:selectBooleanCheckbox  value="${helloworld.active}" required="true" shape="poly"  id="chkRememberMe" ></h:selectBooleanCheckbox></td></tr>
+            <td>Enter UserName</td>
+            <td><h:inputText value="${helloworld.userName}" id="userName"></h:inputText> </td>
+            <td><h:commandButton  onclick="showCheckedValue()" value="page3"></h:commandButton> </td>
+            
+            <td>May Data</td>
+            <td><h:selectManyCheckbox value="#{helloworld.data}">
+   <!-- <f:selectItem itemValue="1" itemLabel="Item 1" />
+   <f:selectItem itemValue="2" itemLabel="Item 2" /> -->
+</h:selectManyCheckbox></td>
+            </table>
+           
+         </h:form>
+ </h:body>
+</html>
